@@ -5,13 +5,11 @@ const logger = require('./middleware/logger')
 const errorHandler = require('./error-handlers/500')
 const notFound = require('./error-handlers/404')
 // const sequelize = require('./auth/models/user');
-const { authRoutes } = require('./auth');
-
-
+const { authRoutes } = require('./auth')
 
 const server = express()
 const PORT = process.env.PORT || 3002
-server.use(authRoutes);
+server.use(authRoutes)
 server.use(logger)
 server.use(express.json())
 
